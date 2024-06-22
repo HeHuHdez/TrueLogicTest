@@ -16,6 +16,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.1)
+    scanf (1.0.0)
 
 PLATFORMS
   ruby
@@ -24,6 +25,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   rspec
+  scanf
 
 BUNDLED WITH
    2.5.11
