@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'rspec'
 require_relative '../data_methods'  #
 
 describe DataMethods do
   let(:dummy_file_path) { File.expand_path('../../fixtures/w_data.dat', __FILE__) }
-
 
   subject { DataMethodsTester.new(dummy_file_path) }
 
@@ -17,7 +18,7 @@ describe DataMethods do
   describe '#get_spread' do
     it 'calculates the spread between min and max temperatures' do
       expect(subject.send(:get_spread, '59', '88')).to eq(29.0)
-      expect(subject.send(:get_spread, '73', '57')).to eq(-16.0)
+      expect(subject.send(:get_spread, '73', '57')).to eq(16.0)
     end
   end
 

@@ -8,16 +8,7 @@ class WeatherData
   include DataMethods
 
   def calculate_day_with_minimun_spread
-    min_spread = nil
-    min_spread_day = nil
-    @data.each do |day|
-      spread = get_spread(day['MnT'], day['MxT'])
-      if min_spread.nil? || spread < min_spread
-        min_spread = spread
-        min_spread_day = day['Dy']
-      end
-    end
-    min_spread_day
+    calculate_minimum_spread('MnT', 'MxT')['Dy']
   end
 
   private
