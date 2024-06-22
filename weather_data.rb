@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
+require_relative 'data_methods'
+
 class WeatherData
   attr_accessor :data
 
-  def initialize(file_path)
-    file = File.read(file_path)
-    @data = get_data(file)
-  end
+  include DataMethods
 
   def calculate_day_with_minimun_spread
     min_spread = nil
@@ -27,9 +28,5 @@ class WeatherData
     table_lines[1..-1].map do |line|
       columns.zip(line.strip.split).to_h
     end
-  end
-
-  def get_spread(min, max)
-    max.to_f - min.to_f
   end
 end
