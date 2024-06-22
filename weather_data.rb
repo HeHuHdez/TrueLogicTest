@@ -7,8 +7,12 @@ class WeatherData
 
   include DataMethods
 
+  MINIMUM_TEMPERATURE_KEY = 'MnT'
+  MAXIMUM_TEMPERATURE_KEY = 'MxT'
+  DAY_KEY = 'Dy'
+
   def calculate_day_with_minimun_spread
-    calculate_minimum_spread('MnT', 'MxT')['Dy']
+    calculate_minimum_spread(MINIMUM_TEMPERATURE_KEY, MAXIMUM_TEMPERATURE_KEY)[DAY_KEY]
   end
 
   private
