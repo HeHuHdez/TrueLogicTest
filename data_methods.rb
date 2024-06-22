@@ -7,7 +7,7 @@ module DataMethods
   private
 
   def get_data(file)
-    raise NotImplementedError 'You must implement the get_data method'
+    raise 'NotImplementedError'
   end
 
   def get_spread(min, max)
